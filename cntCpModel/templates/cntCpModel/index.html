@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>CNT CP | TY58</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files    -->
+  <link rel="stylesheet" href="{% static 'dist/css/style.css' %}">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/icofont/icofont.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}"rel="stylesheet">
+  <link href="{% static 'assets/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/venobox/venobox.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/owl.carousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="index.html">Sentiment Analysis</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="#about">Try It Now!</a></li>
+          <li><a href="#services">Classification</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>CNT CP | TY58</h1>
+          <h2>Web Development with NLP Backend in Python</h2>
+        </div>
+      </div>
+      <div class="text-center">
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+      </div>
+
+      <div class="row icon-boxes">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-pie-chart-fill"></i></div>
+            <h4 class="title"><a href="">Data</a></h4>
+            <p class="description">Where text is visible, people tend to focus on the textual content rather than upon overall presentation.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-bar-chart-2-fill"></i></div>
+            <h4 class="title"><a href="">Stats</a></h4>
+            <p class="description">Where text is visible, people tend to focus on the textual content rather than upon overall presentation.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-slideshow-2-fill"></i></div>
+            <h4 class="title"><a href="https://docs.google.com/presentation/d/1-H1vTM5s_FVHcxRQxEHGcGRi2BD8kPe_8dEoxuU1eu4/edit#slide=id.p">Presentation</a></h4>
+            <p class="description">This is the presentation for our Project</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" data-aos="zoom-in" data-aos-delay="500">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-bubble-chart-fill"></i></div>
+            <h4 class="title"><a href="https://colab.research.google.com/drive/1q8HTSNqVIZmWMAFsKwoUQKsh5XJTKTJf#scrollTo=Y-E4cgkIvmVu">Model</a></h4>
+            <p class="description">This is the Model for our Project</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Try it Yourself!</h2>
+          <p>Get your comment classified here,you are just one click away! </p>
+        </div>
+
+        <form action="/home/" method="POST">
+        {% csrf_token %}
+        <div class="input-group mb-3">
+        	<input type="text" style="font-size: 15px; padding: 23.4px" class="form-control rounded-sm" name="text" placeholder="Enter your Text" aria-label="text" aria-describedby="button-addon2">
+      		<div class="control ml-2">
+        		<button type="submit" class="get-started-btn ">Get Predicted Rating</button>
+      		</div>
+  		</div>
+		</form>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <section id="services" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+
+        <div class="section-title">
+          <h2>Check your ratings here!</h2>
+          <p>You will get to know what our NLP model thinks about your comment!</p>
+        </div>
+        <table class="table mt-5 table-dark" style="margin-bottom: 80px;">
+                                          <thead>
+                                            <tr>
+                                              <th scope="col" style="font-size: 16px; color: #F0F0F0;">Text</th>
+                                              <th scope="col" style="font-size: 16px; color: #F0F0F0;">Classification</th>
+                                              <th scope="col" style="font-size: 16px; color: #F0F0F0;">Rating</th>
+                                            </tr>
+                                          </thead>
+                                          <tbody>
+                                            {% for i in lst %}
+                                                <tr>
+                                                    <td style="font-size: 13px; color: #F0F0F0;">{{ i.text }}</td>
+                                                    <td style="font-size: 16px; color: #F0F0F0;">{{ i.clas }}</td>
+                                                    <td style="font-size: 16px; color: #F0F0F0;width:150px">
+                                                        {% for ii in i.rating %}
+                                                            <div style="display: inline-block;">
+                                                            <img src="{% static 'star.png' %}" width="16" height="16">
+                                                            </div>
+                                                        {% endfor %}
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                          </tbody>
+                                        </table>
+
+    </section>
+
+
+    <section id="counts" class="counts section-bg">
+      <div class="container">
+
+
+
+        <div class="row justify-content-end">
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-toggle="counter-up">39</span>
+              <p>Prashil Jambulkar</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-toggle="counter-up">40</span>
+              <p>Sampatlal Jangid</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-toggle="counter-up">51</span>
+              <p>Siddharth Kale</p>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+            <div class="count-box">
+              <span data-toggle="counter-up">75</span>
+              <p>Vedant Mahajan</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Counts Section -->
+
+
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span> CNT TY 58</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/jquery.easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/waypoints/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/counterup/counterup.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/venobox/venobox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/owl.carousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
